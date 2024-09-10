@@ -56,12 +56,24 @@ println!("w2={}",w2); // accesing  w1 after w2 is created is an error
 
 
 // refrencing, derefrencing and auto derefrencing
+let mut  a =5;
+let b  = &mut a; // b is refrence to the value of x -> dont confuse it with pointer in C
+*b = *b +1; // to change values here we have to manually derefrence
+println!("{}",b); // auto derfrencing i.e. *b = value of x 
 
+// dangling refrence 
+//let refrence_to_nothing = create_string_ref();
 
 
 
 }
 
+
+
+// fn create_string_ref()->&String {
+//     let s:String= String::from("Hello");
+//     return  &s;
+// }
 
 fn calculate_len (s:String) -> (String, usize){
 let length:usize = s.len();
